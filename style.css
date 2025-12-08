@@ -1,20 +1,20 @@
 /* === ZMIENNE KOLORÓW === */
 :root {
-  --color-primary: #4a90e2;
-  --color-primary-soft: #e6f0fb;
-  --color-accent: #f5c242;
+  --color-primary: #234a86;        /* spokojny granat */
+  --color-primary-soft: #e5edf9;
+  --color-accent: #f4b000;         /* ciepły akcent */
   --color-secondary: #6dbf8a;
 
   --color-bg: #ffffff;
-  --color-bg-muted: #f7f7f7;
-  --color-text: #202020;
-  --color-text-soft: #5a5a5a;
+  --color-bg-muted: #f5f5f7;
+  --color-text: #1f2933;
+  --color-text-soft: #5f6c80;
 
   --radius-lg: 18px;
   --radius-md: 12px;
 
-  --shadow-soft: 0 10px 28px rgba(0, 0, 0, 0.07);
-  --shadow-hover: 0 14px 36px rgba(0, 0, 0, 0.12);
+  --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.06);
+  --shadow-hover: 0 18px 45px rgba(15, 23, 42, 0.12);
 }
 
 /* === RESET === */
@@ -26,10 +26,10 @@
 
 body {
   margin: 0;
-  font-family: "Roboto", system-ui, sans-serif;
+  font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--color-text);
   background-color: var(--color-bg);
-  line-height: 1.65;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -41,73 +41,76 @@ img {
 a {
   color: var(--color-primary);
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, border-color 0.2s ease;
 }
 
-a:hover {
-  color: #1e6ecb;
+/* link w treści */
+p a {
+  border-bottom: 1px solid rgba(35, 74, 134, 0.3);
+}
+
+p a:hover {
+  color: #163564;
+  border-color: rgba(35, 74, 134, 0.6);
 }
 
 /* === GLOBAL LAYOUT === */
 .container {
   width: 100%;
-  max-width: 1180px;
+  max-width: 1160px;
   margin: 0 auto;
   padding: 0 1.8rem;
 }
 
 .section {
-  padding: 5.6rem 0;
+  padding: 5.4rem 0;
 }
 
 .section-muted {
   background-color: var(--color-bg-muted);
 }
 
-.section-accent {
-  background: linear-gradient(135deg, #f5f8ff, #effff6);
-}
-
 .section-header {
-  text-align: center;
-  max-width: 740px;
-  margin: 0 auto 3.2rem;
+  text-align: left;
+  max-width: 720px;
+  margin: 0 auto 3rem;
 }
 
 .section-header h2 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 2.2rem;
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: 2.1rem;
   margin-bottom: 0.4rem;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.02em;
 }
 
 .section-header p {
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   color: var(--color-text-soft);
+  margin: 0;
 }
 
 /* === HEADER === */
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 50;
-  background: rgba(255, 255, 255, 0.8);
+  z-index: 80;
+  background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
 }
 
 .header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 1.6rem;
+  padding: 0.9rem 1.8rem;
 }
 
 .logo {
   display: flex;
   align-items: center;
   gap: 0.7rem;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", system-ui, sans-serif;
   font-weight: 600;
 }
 
@@ -117,84 +120,118 @@ a:hover {
   justify-content: center;
   width: 34px;
   height: 34px;
-  border-radius: 12px;
+  border-radius: 11px;
   background: var(--color-primary);
   color: #fff;
   font-size: 0.9rem;
+  letter-spacing: 0.06em;
 }
 
 .logo-text {
-  font-size: 1rem;
+  font-size: 0.98rem;
 }
 
 .main-nav {
   display: flex;
-  gap: 1.4rem;
+  align-items: center;
+  gap: 1.6rem;
   font-size: 0.95rem;
 }
 
 .main-nav a {
   color: var(--color-text-soft);
-  transition: all 0.2s ease;
+  position: relative;
+  padding-bottom: 0.1rem;
+}
+
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.15rem;
+  width: 0;
+  height: 2px;
+  background: var(--color-primary);
+  transition: width 0.2s ease;
 }
 
 .main-nav a:hover {
   color: var(--color-primary);
 }
 
+.main-nav a:hover::after {
+  width: 100%;
+}
+
 .btn-nav {
-  padding: 0.4rem 1rem;
-  border-radius: 50px;
-  border: 1px solid var(--color-primary);
+  padding: 0.38rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(35, 74, 134, 0.6);
+  font-weight: 500;
 }
 
 /* === HERO === */
+.hero {
+  background: linear-gradient(135deg, #f6f7fb 0%, #ffffff 45%, #f7fafc 100%);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.04);
+}
+
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-  gap: 4rem;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 3.8rem;
   align-items: center;
+  padding-top: 2.4rem;
+  padding-bottom: 2.4rem;
 }
 
 .hero-text h1 {
-  font-family: "Montserrat", sans-serif;
-  font-size: clamp(2.2rem, 2.6vw + 1.4rem, 3rem);
-  margin-bottom: 1.2rem;
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: clamp(2.4rem, 2.8vw + 1.4rem, 3.1rem);
+  margin-bottom: 1.1rem;
   line-height: 1.15;
 }
 
 .hero-lead {
-  font-size: 1.15rem;
+  font-size: 1.08rem;
   color: var(--color-text-soft);
-  margin-bottom: 2.2rem;
-  max-width: 550px;
+  margin-bottom: 2rem;
+  max-width: 600px;
 }
 
 .hero-actions {
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 0.9rem;
 }
 
 /* HERO IMAGE */
+.hero-illustration {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .hero-illustration img {
-  max-width: 380px;
-  margin-left: auto;
+  max-width: 320px;
   filter: drop-shadow(var(--shadow-soft));
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.8s ease forwards 0.2s;
 }
 
 /* === BUTTONS === */
 .btn {
   display: inline-flex;
   align-items: center;
-  padding: 0.9rem 1.5rem;
+  justify-content: center;
+  padding: 0.85rem 1.6rem;
   border-radius: 999px;
   font-weight: 500;
   cursor: pointer;
-  border: none;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease;
+  border: 1px solid transparent;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .btn.primary {
@@ -204,13 +241,14 @@ a:hover {
 }
 
 .btn.primary:hover {
-  transform: translateY(-2px);
+  transform: translateY(-1px);
   box-shadow: var(--shadow-hover);
 }
 
 .btn.ghost {
-  border: 1px solid rgba(74, 144, 226, 0.4);
+  background: transparent;
   color: var(--color-primary);
+  border-color: rgba(35, 74, 134, 0.35);
 }
 
 .btn.ghost:hover {
@@ -227,99 +265,107 @@ a:hover {
 }
 
 .about-grid {
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
 .collab-grid {
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .card {
   background: #fff;
   border-radius: var(--radius-lg);
-  padding: 2rem;
+  padding: 1.9rem 2rem;
   box-shadow: var(--shadow-soft);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
 .card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow-hover);
 }
 
 .card h3 {
   margin-top: 0;
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.2rem;
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: 1.18rem;
 }
 
 .card.highlight {
-  border: 1px solid rgba(74, 144, 226, 0.35);
+  border: 1px solid rgba(35, 74, 134, 0.25);
 }
 
 /* VALUES */
 .values-list {
   padding-left: 1.1rem;
   color: var(--color-text-soft);
+  margin: 0.4rem 0 0;
 }
 
-/* === ICON CARDS === */
+/* === ICON CARDS (OBSZARY DZIAŁAŃ) === */
 .grid-4 {
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .icon-card {
   background: #fff;
   border-radius: var(--radius-lg);
-  padding: 2rem;
+  padding: 1.9rem 2rem;
   box-shadow: var(--shadow-soft);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  border: 1px solid rgba(15, 23, 42, 0.03);
 }
 
 .icon-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-4px);
   box-shadow: var(--shadow-hover);
+  border-color: rgba(35, 74, 134, 0.18);
 }
 
 .icon-circle {
-  width: 72px;
-  height: 72px;
-  border-radius: 24px;
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
   background: var(--color-primary-soft);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
 }
 
 .icon-card:hover .icon-circle {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px);
 }
 
 .icon-circle img {
   width: 60%;
-  transition: transform 0.25s ease;
+  transition: transform 0.2s ease;
 }
 
 .icon-card:hover img {
-  transform: scale(1.1);
+  transform: scale(1.06);
 }
 
 .icon-card h3 {
-  margin-top: 1rem;
-  font-size: 1.2rem;
-  font-family: "Montserrat", sans-serif;
+  margin-top: 1.1rem;
+  font-size: 1.18rem;
+  font-family: "Montserrat", system-ui, sans-serif;
 }
 
-/* === PROJECTS === */
+.icon-card p {
+  margin-top: 0.4rem;
+  font-size: 0.98rem;
+  color: var(--color-text-soft);
+}
+
+/* === PROJEKTY I ANALIZY === */
 .projects-grid {
   display: grid;
   gap: 2.4rem;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 }
 
 .projects-column {
@@ -329,62 +375,69 @@ a:hover {
 }
 
 .column-title {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", system-ui, sans-serif;
   font-size: 1.15rem;
-  margin: 0 0 0.4rem;
+  margin: 0 0 0.5rem;
 }
 
 .project-card {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 1.3rem;
+  gap: 1.1rem;
   padding: 1.4rem 1.6rem;
   background: #fff;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-soft);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  border: 1px solid rgba(15, 23, 42, 0.03);
 }
 
 .project-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow-hover);
+  border-color: rgba(35, 74, 134, 0.16);
 }
 
 .project-icon {
-  width: 58px;
-  height: 58px;
+  width: 52px;
+  height: 52px;
   background: var(--color-primary-soft);
-  border-radius: 20px;
+  border-radius: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
 }
 
 .project-card:hover .project-icon {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
 }
 
 .project-icon img {
   width: 62%;
-  transition: transform 0.25s ease;
+  transition: transform 0.2s ease;
 }
 
 .project-card:hover img {
-  transform: scale(1.12);
+  transform: scale(1.06);
 }
 
 .project-body h4 {
-  margin: 0 0 0.4rem;
-  font-size: 1.07rem;
-  font-family: "Montserrat", sans-serif;
+  margin: 0 0 0.35rem;
+  font-size: 1.03rem;
+  font-family: "Montserrat", system-ui, sans-serif;
+}
+
+.project-body p {
+  margin: 0 0 0.2rem;
+  font-size: 0.95rem;
+  color: var(--color-text-soft);
 }
 
 /* === ROZWIJANE TREŚCI PROJECTS / ANALIZ === */
 .project-details {
-  margin-top: 0.4rem;
+  margin-top: 0.35rem;
   font-size: 0.93rem;
   color: var(--color-text-soft);
 }
@@ -393,7 +446,7 @@ a:hover {
   list-style: none;
   cursor: pointer;
   padding: 0;
-  margin: 0.4rem 0;
+  margin: 0.35rem 0 0.2rem;
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--color-primary);
@@ -404,12 +457,12 @@ a:hover {
 }
 
 .project-details p {
-  margin: 0.4rem 0 0;
+  margin: 0.25rem 0 0;
 }
 
-/* === CONTACT === */
+/* === KONTAKT === */
 .contact-grid {
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .contact-note {
@@ -419,17 +472,18 @@ a:hover {
 
 /* === FOOTER === */
 .site-footer {
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
-  padding: 2rem 0 2.8rem;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  padding: 1.9rem 0 2.4rem;
   text-align: center;
   color: var(--color-text-soft);
   font-size: 0.88rem;
+  background: #ffffff;
 }
 
 .footer-inner {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  gap: 0.25rem;
   align-items: center;
 }
 
@@ -437,62 +491,68 @@ a:hover {
   color: var(--color-text-soft);
 }
 
-/* === ANIMACJE POJAWIANIA SIĘ === */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-section {
-  opacity: 0;
-  transform: translateY(28px);
-  animation: fadeInUp 0.8s ease forwards;
-}
-
-section:nth-of-type(1) { animation-delay: 0.05s; }
-section:nth-of-type(2) { animation-delay: 0.15s; }
-section:nth-of-type(3) { animation-delay: 0.25s; }
-section:nth-of-type(4) { animation-delay: 0.35s; }
-section:nth-of-type(5) { animation-delay: 0.45s; }
-section:nth-of-type(6) { animation-delay: 0.55s; }
+/* === ANIMACJE — delikatne (bez wygaszania całych sekcji) === */
+/* Hero image już ma animację; sekcje zostawiamy statyczne dla „poważniejszego” efektu */
 
 /* === RESPONSYWNOŚĆ === */
-@media (max-width: 880px) {
+@media (max-width: 960px) {
   .hero-grid {
     grid-template-columns: 1fr;
-    text-align: left;
   }
 
   .hero-illustration {
-    order: -1;
-    display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    margin-top: 2rem;
+  }
+
+  .hero-illustration img {
+    margin-left: 0;
+  }
+
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+    padding-inline: 1.4rem;
+  }
+
+  .main-nav {
+    flex-wrap: wrap;
+    gap: 0.8rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .section {
+    padding: 3.8rem 0;
   }
 
   .projects-grid {
     grid-template-columns: 1fr;
   }
+
+  .hero {
+    padding-top: 0.4rem;
+  }
 }
 
-@media (max-width: 640px) {
-  .section {
-    padding: 3.8rem 0;
+@media (max-width: 520px) {
+  .container {
+    padding: 0 1.2rem;
   }
 
-  .header-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.7rem;
+  .hero-text h1 {
+    font-size: 2.1rem;
   }
 
-  .main-nav {
-    flex-wrap: wrap;
-    gap: 0.8rem;
+  .card,
+  .icon-card,
+  .project-card {
+    padding: 1.4rem 1.4rem;
   }
 }
