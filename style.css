@@ -1,357 +1,379 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Stowarzyszenie Centrum Integracji</title>
+/* === ZMIENNE KOLORÓW === */
+:root {
+  --color-primary: #4a90e2;
+  --color-primary-soft: #e6f0fb;
+  --color-accent: #f5c242;
+  --color-secondary: #6dbf8a;
 
-  <meta name="description" content="Tworzymy inkluzywną przestrzeń rozmowy, nauki i twórczości, wspierając integrację społeczności." />
+  --color-bg: #ffffff;
+  --color-bg-muted: #f7f7f7;
+  --color-text: #202020;
+  --color-text-soft: #5a5a5a;
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-</head>
+  --radius-lg: 18px;
+  --radius-md: 12px;
 
-<body>
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="logo">
-        <span class="logo-mark">CI</span>
-        <span class="logo-text">Stowarzyszenie Centrum Integracji</span>
-      </div>
+  --shadow-soft: 0 10px 28px rgba(0, 0, 0, 0.07);
+  --shadow-hover: 0 14px 36px rgba(0, 0, 0, 0.12);
+}
 
-      <nav class="main-nav">
-        <a href="#hero">Start</a>
-        <a href="#about">O nas</a>
-        <a href="#areas">Obszary działań</a>
-        <a href="#projects">Projekty i analizy</a>
-        <a href="#collab">Współpraca</a>
-        <a href="#contact" class="btn-nav">Kontakt</a>
-      </nav>
-    </div>
-  </header>
+/* === RESET === */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-  <main>
-    <!-- HERO -->
-    <section id="hero" class="section hero">
-      <div class="container hero-grid">
-        <div class="hero-text">
-          <h1>Centrum Integracji – przestrzeń wiedzy i twórczości</h1>
+body {
+  margin: 0;
+  font-family: "Roboto", system-ui, sans-serif;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
 
-          <p class="hero-lead">
-            Tworzymy przestrzeń wiedzy i twórczości, która łączy ludzi, perspektywy i doświadczenia.
-            Wspieramy integrację różnorodnych środowisk, budując mosty oparte na dialogu, zrozumieniu i wspólnym działaniu.
-          </p>
+img {
+  max-width: 100%;
+  display: block;
+}
 
-          <div class="hero-actions">
-            <a href="#areas" class="btn primary">Poznaj nasze działania</a>
-            <a href="#projects" class="btn ghost">Zobacz projekty i analizy</a>
-          </div>
-        </div>
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
 
-        <div class="hero-illustration">
-          <img src="img/icon-resilience.png" alt="Ilustracja symbolizująca wzmacnianie rezyliencji i wspólnoty" />
-        </div>
-      </div>
-    </section>
+a:hover {
+  color: #1e6ecb;
+}
 
-    <!-- O NAS -->
-    <section id="about" class="section section-muted">
-      <div class="container">
-        <div class="section-header">
-          <h2>O nas</h2>
-          <p>
-            Tworzymy przestrzeń, w której wiedza, nauka i twórczość wzmacniają społeczności
-            oraz wspierają integrację różnych środowisk – szczególnie tam, gdzie dostęp do wsparcia jest ograniczony.
-          </p>
-        </div>
+/* === GLOBAL LAYOUT === */
+.container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 1.8rem;
+}
 
-        <div class="about-grid">
-          <div class="card">
-            <h3>Misja</h3>
-            <p>
-              Tworzymy przestrzeń wiedzy i twórczości, która łączy ludzi, perspektywy i doświadczenia.
-              Wspieramy integrację różnorodnych środowisk, budując mosty oparte na dialogu, zrozumieniu i wspólnym działaniu.
-            </p>
-          </div>
+.section {
+  padding: 5.6rem 0;
+}
 
-          <div class="card">
-            <h3>Wizja</h3>
-            <p>
-              Społeczeństwo, w którym każdy – niezależnie od neurotypowości, zasobów czy miejsca zamieszkania –
-              ma dostęp do narzędzi wspierających dobrostan psychiczny, fizyczny i społeczny.
-            </p>
-          </div>
+.section-muted {
+  background-color: var(--color-bg-muted);
+}
 
-          <div class="card">
-            <h3>Wartości</h3>
-            <ul class="values-list">
-              <li>dostępność i równość</li>
-              <li>szacunek dla neuroróżnorodności</li>
-              <li>naukowa rzetelność i krytyczne myślenie</li>
-              <li>empatia i bezpieczeństwo psychologiczne</li>
-              <li>twórczość i współdziałanie</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+.section-accent {
+  background: linear-gradient(135deg, #f5f8ff, #effff6);
+}
 
-    <!-- OBSZARY DZIAŁAŃ -->
-    <section id="areas" class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2>Obszary działań</h2>
-          <p>
-            Przekładamy wiedzę na konkretne rozwiązania dla osób, rodzin, szkół i społeczności.
-          </p>
-        </div>
+.section-header {
+  text-align: center;
+  max-width: 740px;
+  margin: 0 auto 3.2rem;
+}
 
-        <div class="grid-4">
+.section-header h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.015em;
+}
 
-          <!-- 1. Integracja – przesunięta jako pierwsza -->
-          <article class="icon-card">
-            <div class="icon-circle">
-              <img src="img/icon-community.png" alt="Ikona integracji społeczności – trzy osoby w uścisku" />
-            </div>
-            <h3>Integracja społeczności</h3>
-            <p>
-              Budujemy mosty między sąsiadami, rodzinami, instytucjami i organizacjami.
-            </p>
-          </article>
-
-          <!-- 2. Rezyliencja -->
-          <article class="icon-card">
-            <div class="icon-circle">
-              <img src="img/icon-resilience.png" alt="Ikona rezyliencji – osoba podtrzymująca przewracające się elementy" />
-            </div>
-            <h3>Rezyliencja i dobrostan</h3>
-            <p>
-              Programy wzmacniające odporność psychiczną i emocjonalną – od codziennych strategii regulacji stresu
-              po długofalowe budowanie zasobów osobistych, rodzinnych i zawodowych.
-            </p>
-          </article>
-
-          <!-- 3. Innowacje społeczne (dawne AI i stres) -->
-          <article class="icon-card">
-            <div class="icon-circle">
-              <img src="img/icon-ai-stress.png" alt="Ikona innowacji społecznych – głowa i symbol technologii" />
-            </div>
-            <h3>Innowacje społeczne</h3>
-            <p>
-              Analizujemy, jak nowe technologie i zmiany społeczne wpływają na dobrostan, funkcjonowanie społeczności
-              i dostęp do wsparcia – proponując rozwiązania zmniejszające obciążenie i wykluczenie.
-            </p>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJEKTY I ANALIZY -->
-    <section id="projects" class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2>Projekty i analizy</h2>
-          <p>
-            Łączymy działania praktyczne z analizą systemowych barier. Pracujemy nad rozwiązaniami,
-            które realnie wspierają integrację, rezyliencję i dobrostan społeczności.
-          </p>
-        </div>
-
-        <div class="projects-grid">
-          <!-- PROJEKTY -->
-          <div class="projects-column">
-            <h3 class="column-title">Projekty</h3>
-
-            <article class="project-card">
-              <div class="project-icon">
-                <img src="img/icon-projects.png" alt="Ikona projektów – osoba przy schemacie działań" />
-              </div>
-              <div class="project-body">
-                <h4>Centrum Rezyliencji Lokalnej</h4>
-                <p>
-                  Program wzmacniania odporności psychicznej i integracji w społecznościach lokalnych –
-                  z warsztatami, grupami wsparcia i przestrzenią rozmowy.
-                </p>
-                <a href="#" class="project-link">Więcej o projekcie</a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-icon">
-                <img src="img/icon-community.png" alt="Ikona integracji społeczności" />
-              </div>
-              <div class="project-body">
-                <h4>Laboratorium Integracji</h4>
-                <p>
-                  Cykl działań łączących osoby neuroróżnorodne, rodziny, szkoły i instytucje –
-                  nastawiony na wspólne wypracowywanie inkluzywnych rozwiązań.
-                </p>
-                <a href="#" class="project-link">Więcej o projekcie</a>
-              </div>
-            </article>
-          </div>
-
-          <!-- ANALIZY -->
-          <div class="projects-column">
-            <h3 class="column-title">Analizy i komentarze</h3>
-
-            <article class="project-card">
-              <div class="project-icon">
-                <img src="img/icon-publications.png" alt="Ikona publikacji – stos książek" />
-              </div>
-              <div class="project-body">
-                <h4>Dostęp do wsparcia dla osób neuroróżnorodnych – luka systemowa, która wymaga zmian</h4>
-                <p>
-                  Analiza barier w dostępie do wsparcia psychologicznego i edukacyjnego
-                  oraz propozycje rozwiązań systemowych dla społeczności lokalnych.
-                </p>
-                <a href="#" class="project-link">Przeczytaj komentarz</a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-icon">
-                <img src="img/icon-ai-stress.png" alt="Ikona AI i stresu – głowa i technologia" />
-              </div>
-              <div class="project-body">
-                <h4>AI, przeciążenie informacyjne i dobrostan społeczny</h4>
-                <p>
-                  Jak sztuczna inteligencja wpływa na stres i obciążenie poznawcze
-                  oraz co można zrobić, aby chronić najbardziej wrażliwe grupy.
-                </p>
-                <a href="#" class="project-link">Przeczytaj komentarz</a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-icon">
-                <img src="img/icon-publications.png" alt="Ikona integracji – symbol współpracy" />
-              </div>
-              <div class="project-body">
-                <h4>Integracja społeczności jako fundament rezyliencji</h4>
-                <p>
-                  Dlaczego integracja jest kluczem do budowania odporności społecznej
-                  i powinna stać się priorytetem polityk publicznych.
-                </p>
-                <a href="#" class="project-link">Przeczytaj komentarz</a>
-              </div>
-            </article>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- WSPÓŁPRACA -->
-    <section id="collab" class="section section-muted">
-      <div class="container">
-        <div class="section-header">
-          <h2>Współpraca</h2>
-          <p>
-            Zapraszamy do współtworzenia rozwiązań, które realnie wzmacniają integrację, rezyliencję i dobrostan
-            w społecznościach, instytucjach i organizacjach.
-          </p>
-        </div>
-
-        <div class="collab-grid">
-          <div class="card">
-            <h3>Dla kogo?</h3>
-            <ul class="values-list">
-              <li>samorządy i instytucje publiczne</li>
-              <li>szkoły, uczelnie i organizacje edukacyjne</li>
-              <li>organizacje społeczne i inicjatywy oddolne</li>
-              <li>firmy, zespoły i pracodawcy</li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h3>Jak działamy?</h3>
-            <ul class="values-list">
-              <li>projektujemy programy integracji, rezyliencji i wellbeing</li>
-              <li>prowadzimy szkolenia, warsztaty i procesy rozwojowe</li>
-              <li>przygotowujemy analizy, opinie i materiały eksperckie</li>
-              <li>łączymy partnerów w sieci współpracy i wymiany wiedzy</li>
-            </ul>
-          </div>
-
-          <div class="card highlight">
-            <h3>Porozmawiajmy</h3>
-            <p>Masz pomysł na wspólny projekt albo widzisz potrzebę w swojej społeczności lub instytucji?</p>
-            <a href="#contact" class="btn primary full-width">Napisz do nas</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- KONTAKT -->
-    <section id="contact" class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2>Kontakt</h2>
-          <p>Jeśli chcesz dołączyć do społeczności, zaprosić nas do projektu lub zadać pytanie – odezwij się.</p>
-        </div>
-
-        <div class="contact-grid">
-          <div>
-            <h3>Dane stowarzyszenia</h3>
-            <p>
-              <strong>Stowarzyszenie Centrum Integracji</strong><br>
-              Warszawa<br>
-            </p>
-            <p>
-              e-mail: <a href="mailto:kontakt@twojadomena.pl">kontakt@twojadomena.pl</a>
-            </p>
-            <p class="contact-note">
-              W wiadomości napisz kilka słów o sobie lub organizacji oraz temat, którego dotyczy kontakt.
-            </p>
-          </div>
-
-          <div>
-            <h3>Formularz kontaktowy</h3>
-            <p>
-              Możesz tu dodać formularz z Google Forms lub innego narzędzia, jeśli chcesz zbierać zgłoszenia online
-              od osób indywidualnych, organizacji czy instytucji.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> Stowarzyszenie Centrum Integracji. Wszelkie prawa zastrzeżone.</p>
-      <p class="footer-meta">
-        Strona powstała, aby wspierać rozwój integracji, rezyliencji i dobrostanu w społecznościach.
-      </p>
-    </div>
-
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-  </footer>
-</body>
-</html>
-/* === ROZWIJANE TREŚCI PROJEKTÓW / ANALIZ === */
-
-.project-details {
-  margin-top: 0.2rem;
-  font-size: 0.93rem;
+.section-header p {
+  font-size: 1.05rem;
   color: var(--color-text-soft);
 }
 
-.project-details[open] {
+/* === HEADER === */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.6rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+
+.logo-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.logo-text {
+  font-size: 1rem;
+}
+
+.main-nav {
+  display: flex;
+  gap: 1.4rem;
+  font-size: 0.95rem;
+}
+
+.main-nav a {
+  color: var(--color-text-soft);
+  transition: all 0.2s ease;
+}
+
+.main-nav a:hover {
+  color: var(--color-primary);
+}
+
+.btn-nav {
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  border: 1px solid var(--color-primary);
+}
+
+/* === HERO === */
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(2.2rem, 2.6vw + 1.4rem, 3rem);
+  margin-bottom: 1.2rem;
+  line-height: 1.15;
+}
+
+.hero-lead {
+  font-size: 1.15rem;
+  color: var(--color-text-soft);
+  margin-bottom: 2.2rem;
+  max-width: 550px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+/* HERO IMAGE */
+.hero-illustration img {
+  max-width: 380px;
+  margin-left: auto;
+  filter: drop-shadow(var(--shadow-soft));
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards 0.2s;
+}
+
+/* === BUTTONS === */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.9rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease;
+}
+
+.btn.primary {
+  background: var(--color-primary);
+  color: #fff;
+  box-shadow: var(--shadow-soft);
+}
+
+.btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.btn.ghost {
+  border: 1px solid rgba(74, 144, 226, 0.4);
+  color: var(--color-primary);
+}
+
+.btn.ghost:hover {
+  background: var(--color-primary-soft);
+}
+
+/* === GRIDS & CARDS === */
+.about-grid,
+.collab-grid,
+.projects-grid,
+.contact-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.about-grid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.card h3 {
+  margin-top: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+}
+
+/* VALUES */
+.values-list {
+  padding-left: 1.1rem;
+  color: var(--color-text-soft);
+}
+
+/* === ICON CARDS === */
+.grid-4 {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.icon-card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.icon-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+.icon-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 24px;
+  background: var(--color-primary-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+.icon-card:hover .icon-circle {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.icon-circle img {
+  width: 60%;
+  transition: transform 0.25s ease;
+}
+
+.icon-card:hover img {
+  transform: scale(1.1);
+}
+
+.icon-card h3 {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* === PROJECTS === */
+.projects-grid {
+  display: grid;
+  gap: 2.4rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.project-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.3rem;
+  padding: 1.4rem 1.6rem;
+  background: #fff;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+.project-icon {
+  width: 58px;
+  height: 58px;
+  background: var(--color-primary-soft);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+.project-card:hover .project-icon {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.project-icon img {
+  width: 62%;
+  transition: transform 0.25s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.12);
+}
+
+.project-body h4 {
+  margin: 0 0 0.4rem;
+  font-size: 1.07rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* === ROZWIJANE TREŚCI PROJECTS / ANALIZ === */
+.project-details {
   margin-top: 0.4rem;
+  font-size: 0.93rem;
+  color: var(--color-text-soft);
 }
 
 .project-details summary {
   list-style: none;
   cursor: pointer;
   padding: 0;
-  margin: 0.2rem 0 0.3rem;
+  margin: 0.4rem 0;
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--color-primary);
@@ -362,5 +384,83 @@
 }
 
 .project-details p {
-  margin-top: 0.2rem;
+  margin: 0.4rem 0 0;
+}
+
+/* === CONTACT === */
+.contact-grid {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.contact-note {
+  font-size: 0.92rem;
+  color: var(--color-text-soft);
+}
+
+/* === FOOTER === */
+.site-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 2rem 0 2.8rem;
+  text-align: center;
+  color: var(--color-text-soft);
+  font-size: 0.88rem;
+}
+
+/* === ANIMACJE POJAWIANIA SIĘ === */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section {
+  opacity: 0;
+  transform: translateY(28px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+section:nth-of-type(1) { animation-delay: 0.05s; }
+section:nth-of-type(2) { animation-delay: 0.15s; }
+section:nth-of-type(3) { animation-delay: 0.25s; }
+section:nth-of-type(4) { animation-delay: 0.35s; }
+section:nth-of-type(5) { animation-delay: 0.45s; }
+
+/* === RESPONSYWNOŚĆ === */
+@media (max-width: 880px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .hero-illustration {
+    order: -1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 3.8rem 0;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7rem;
+  }
+
+  .main-nav {
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
 }
