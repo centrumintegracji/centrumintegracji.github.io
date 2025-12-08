@@ -230,6 +230,10 @@ a:hover {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
+.collab-grid {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
 .card {
   background: #fff;
   border-radius: var(--radius-lg);
@@ -247,6 +251,10 @@ a:hover {
   margin-top: 0;
   font-family: "Montserrat", sans-serif;
   font-size: 1.2rem;
+}
+
+.card.highlight {
+  border: 1px solid rgba(74, 144, 226, 0.35);
 }
 
 /* VALUES */
@@ -312,6 +320,18 @@ a:hover {
   display: grid;
   gap: 2.4rem;
   grid-template-columns: 1fr 1fr;
+}
+
+.projects-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.column-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.15rem;
+  margin: 0 0 0.4rem;
 }
 
 .project-card {
@@ -406,6 +426,17 @@ a:hover {
   font-size: 0.88rem;
 }
 
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  align-items: center;
+}
+
+.footer-meta {
+  color: var(--color-text-soft);
+}
+
 /* === ANIMACJE POJAWIANIA SIĘ === */
 @keyframes fadeInUp {
   from {
@@ -429,6 +460,7 @@ section:nth-of-type(2) { animation-delay: 0.15s; }
 section:nth-of-type(3) { animation-delay: 0.25s; }
 section:nth-of-type(4) { animation-delay: 0.35s; }
 section:nth-of-type(5) { animation-delay: 0.45s; }
+section:nth-of-type(6) { animation-delay: 0.55s; }
 
 /* === RESPONSYWNOŚĆ === */
 @media (max-width: 880px) {
