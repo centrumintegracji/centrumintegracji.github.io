@@ -1,23 +1,357 @@
-<section id="hero" class="section hero">
-  <div class="container hero-grid">
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stowarzyszenie Centrum Integracji</title>
 
-    <div class="hero-text">
-      <h1>Centrum Integracji – przestrzeń wiedzy i twórczości</h1>
-      <p class="hero-lead">
-        Tworzymy przestrzeń wiedzy i twórczości, która łączy ludzi, perspektywy i doświadczenia.
-        Wspieramy integrację różnorodnych środowisk, budując mosty oparte na dialogu, zrozumieniu i wspólnym działaniu.
-      </p>
+  <meta name="description" content="Tworzymy przestrzeń wiedzy i twórczości, która łączy ludzi, perspektywy i doświadczenia, wspierając integrację społeczności." />
 
-      <div class="hero-actions">
-        <a href="#areas" class="btn primary">Poznaj nasze działania</a>
-        <a href="#projects" class="btn ghost">Zobacz projekty i analizy</a>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <span class="logo-mark">CI</span>
+        <span class="logo-text">Stowarzyszenie Centrum Integracji</span>
       </div>
-    </div>
 
-    <div class="hero-illustration">
-      <img src="img/logo-centrum-integracji.png"
-           alt="Logo Stowarzyszenia Centrum Integracji – przestrzeń wiedzy i twórczości" />
+      <nav class="main-nav">
+        <a href="#hero">Start</a>
+        <a href="#about">O nas</a>
+        <a href="#areas">Obszary działań</a>
+        <a href="#projects">Projekty i analizy</a>
+        <a href="#collab">Współpraca</a>
+        <a href="#contact" class="btn-nav">Kontakt</a>
+      </nav>
     </div>
+  </header>
 
-  </div>
-</section>
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="section hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>Centrum Integracji – przestrzeń wiedzy i twórczości</h1>
+          <p class="hero-lead">
+            Tworzymy przestrzeń wiedzy i twórczości, która łączy ludzi, perspektywy i doświadczenia.
+            Wspieramy integrację różnorodnych środowisk, budując mosty oparte na dialogu, zrozumieniu i wspólnym działaniu.
+          </p>
+          <div class="hero-actions">
+            <a href="#areas" class="btn primary">Poznaj nasze działania</a>
+            <a href="#projects" class="btn ghost">Zobacz projekty i analizy</a>
+          </div>
+        </div>
+
+        <div class="hero-illustration">
+          <!-- tutaj podmieniamy ludzika na logo -->
+          <img src="img/logo-centrum-integracji.png"
+               alt="Logo Stowarzyszenia Centrum Integracji – przestrzeń wiedzy i twórczości" />
+        </div>
+      </div>
+    </section>
+
+    <!-- O NAS -->
+    <section id="about" class="section section-muted">
+      <div class="container">
+        <div class="section-header">
+          <h2>O nas</h2>
+          <p>
+            Tworzymy przestrzeń, w której wiedza, nauka i twórczość wzmacniają społeczności
+            oraz wspierają integrację różnych środowisk – szczególnie tam, gdzie dostęp do wsparcia jest ograniczony.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="card">
+            <h3>Misja</h3>
+            <p>
+              Tworzymy przestrzeń wiedzy i twórczości, która łączy ludzi, perspektywy i doświadczenia.
+              Wspieramy integrację różnorodnych środowisk, budując mosty oparte na dialogu i współdziałaniu.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Wizja</h3>
+            <p>
+              Społeczeństwo, w którym każdy ma dostęp do narzędzi wspierających dobrostan
+              niezależnie od różnic, zasobów czy miejsca zamieszkania.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Wartości</h3>
+            <ul class="values-list">
+              <li>dostępność i równość</li>
+              <li>szacunek dla różnorodności</li>
+              <li>naukowa rzetelność i krytyczne myślenie</li>
+              <li>empatia i bezpieczeństwo psychologiczne</li>
+              <li>twórczość i współdziałanie</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OBSZARY DZIAŁAŃ -->
+    <section id="areas" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Obszary działań</h2>
+          <p>Przekładamy wiedzę na konkretne rozwiązania dla osób, rodzin, szkół i społeczności.</p>
+        </div>
+
+        <div class="grid-4">
+          <!-- Integracja społeczności -->
+          <article class="icon-card">
+            <div class="icon-circle">
+              <img src="img/icon-community.png" alt="Ikona integracji społeczności" />
+            </div>
+            <h3>Integracja społeczności</h3>
+            <p>Budujemy mosty między sąsiadami, rodzinami, instytucjami i organizacjami.</p>
+          </article>
+
+          <!-- Rezyliencja i dobrostan -->
+          <article class="icon-card">
+            <div class="icon-circle">
+              <img src="img/icon-resilience.png" alt="Ikona rezyliencji" />
+            </div>
+            <h3>Rezyliencja i dobrostan</h3>
+            <p>
+              Programy wzmacniające odporność psychiczną i emocjonalną – od codziennych narzędzi,
+              po długofalowe budowanie zasobów osobistych i społecznych.
+            </p>
+          </article>
+
+          <!-- Innowacje społeczne -->
+          <article class="icon-card">
+            <div class="icon-circle">
+              <img src="img/icon-ai-stress.png" alt="Ikona innowacji społecznych" />
+            </div>
+            <h3>Innowacje społeczne</h3>
+            <p>
+              Analizujemy, jak zmiany społeczne i nowe technologie wpływają na funkcjonowanie,
+              dobrostan i integrację – proponując odpowiedzialne rozwiązania.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJEKTY I ANALIZY -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Projekty i analizy</h2>
+          <p>
+            Łączymy działania praktyczne z analizą systemowych barier, aby wspierać integrację, rezyliencję i dobrostan społeczności.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Projekty -->
+          <div class="projects-column">
+            <h3 class="column-title">Projekty</h3>
+
+            <article class="project-card">
+              <div class="project-icon">
+                <img src="img/icon-projects.png" alt="Ikona projektu" />
+              </div>
+              <div class="project-body">
+                <h4>Centrum Rezyliencji Lokalnej</h4>
+                <p>
+                  Program wzmacniania odporności i budowania więzi w społecznościach lokalnych – warsztaty,
+                  grupy wsparcia i działania integracyjne.
+                </p>
+                <details class="project-details">
+                  <summary>Więcej o projekcie</summary>
+                  <p>
+                    W ramach Centrum Rezyliencji Lokalnej pracujemy z mieszkańcami, liderami lokalnymi,
+                    instytucjami i organizacjami. Skupiamy się na wzmacnianiu zasobów – zamiast wyłącznie
+                    na problemach – oraz na tworzeniu bezpiecznych przestrzeni rozmowy o obciążeniu, zmianie
+                    i dobrostanie. Projekt zakłada m.in. cykle warsztatowe, spotkania sąsiedzkie oraz materiały
+                    wspierające dalsze działania społeczności.
+                  </p>
+                </details>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-icon">
+                <img src="img/icon-community.png" alt="Ikona integracji" />
+              </div>
+              <div class="project-body">
+                <h4>Laboratorium Integracji</h4>
+                <p>
+                  Działania łączące osoby, rodziny, szkoły i organizacje – wspólne wypracowywanie rozwiązań
+                  sprzyjających inkluzyjności.
+                </p>
+                <details class="project-details">
+                  <summary>Więcej o projekcie</summary>
+                  <p>
+                    Laboratorium Integracji to przestrzeń testowania i współtworzenia rozwiązań, które pomagają
+                    lepiej się rozumieć i współpracować. Zapraszamy do stołu różne strony: osoby z doświadczeniem
+                    neuroróżnorodności, rodziny, przedstawicieli szkół, instytucji kultury i NGO. Wspólnie
+                    projektujemy narzędzia, działania i dobre praktyki, które realnie ułatwiają bycie razem
+                    pomimo różnic.
+                  </p>
+                </details>
+              </div>
+            </article>
+          </div>
+
+          <!-- Analizy i komentarze -->
+          <div class="projects-column">
+            <h3 class="column-title">Analizy i komentarze</h3>
+
+            <article class="project-card">
+              <div class="project-icon">
+                <img src="img/icon-publications.png" alt="Ikona publikacji" />
+              </div>
+              <div class="project-body">
+                <h4>Dostęp do wsparcia dla osób neuroróżnorodnych</h4>
+                <p>
+                  Analiza barier i propozycje zmian na poziomie edukacji, usług i lokalnych polityk społecznych.
+                </p>
+                <details class="project-details">
+                  <summary>Przeczytaj komentarz</summary>
+                  <p>
+                    Zwracamy uwagę na brak spójnego systemu wsparcia dla osób neuroróżnorodnych i ich rodzin.
+                    Luka widoczna jest zarówno w edukacji, jak i w ochronie zdrowia oraz usługach społecznych.
+                    W komentarzu omawiamy najważniejsze bariery – m.in. ograniczoną dostępność specjalistów,
+                    przeciążone poradnie, brak koordynacji działań – oraz proponujemy kierunki zmian opartych
+                    na współpracy lokalnych instytucji i organizacji społecznych.
+                  </p>
+                </details>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-icon">
+                <img src="img/icon-ai-stress.png" alt="Ikona AI" />
+              </div>
+              <div class="project-body">
+                <h4>AI, stres i przeciążenie informacyjne</h4>
+                <p>
+                  Jak technologie wpływają na nasz dobrostan i jak chronić najbardziej wrażliwe grupy społeczne.
+                </p>
+                <details class="project-details">
+                  <summary>Przeczytaj komentarz</summary>
+                  <p>
+                    Sztuczna inteligencja i dynamiczny rozwój technologii mogą wspierać rozwój, ale też zwiększać
+                    poczucie presji, przeciążenia poznawczego i ciągłej dostępności. W komentarzu wskazujemy,
+                    które grupy są szczególnie narażone na skutki nadmiaru bodźców oraz jakie praktyki – po stronie
+                    instytucji, szkół i pracodawców – mogą pomagać chronić dobrostan i budować zdrowszą higienę cyfrową.
+                  </p>
+                </details>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-icon">
+                <img src="img/icon-publications.png" alt="Ikona integracji" />
+              </div>
+              <div class="project-body">
+                <h4>Integracja społeczności jako fundament rezyliencji</h4>
+                <p>
+                  Dlaczego integracja powinna być kluczowym elementem polityk publicznych i działań edukacyjnych.
+                </p>
+                <details class="project-details">
+                  <summary>Przeczytaj komentarz</summary>
+                  <p>
+                    Integracja nie jest dodatkiem, ale podstawą odporności społecznej – szczególnie w czasach kryzysów,
+                    polaryzacji i narastającej samotności. W komentarzu pokazujemy, jak działania integracyjne
+                    wpływają na poczucie bezpieczeństwa, zaufanie i zdolność społeczności do wspólnego reagowania
+                    na wyzwania, oraz dlaczego warto traktować je jako priorytet w lokalnych strategiach.
+                  </p>
+                </details>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WSPÓŁPRACA -->
+    <section id="collab" class="section section-muted">
+      <div class="container">
+        <div class="section-header">
+          <h2>Współpraca</h2>
+          <p>
+            Zapraszamy do tworzenia rozwiązań, które realnie wzmacniają integrację i dobrostan w społecznościach.
+          </p>
+        </div>
+
+        <div class="collab-grid">
+          <div class="card">
+            <h3>Dla kogo?</h3>
+            <ul class="values-list">
+              <li>samorządy i instytucje publiczne</li>
+              <li>szkoły i uczelnie</li>
+              <li>organizacje społeczne</li>
+              <li>firmy i pracodawcy</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Jak działamy?</h3>
+            <ul class="values-list">
+              <li>projektujemy programy integracji i rezyliencji</li>
+              <li>prowadzimy warsztaty i działania społeczne</li>
+              <li>przygotowujemy analizy i ekspertyzy</li>
+              <li>łączymy partnerów we wspólnych inicjatywach</li>
+            </ul>
+          </div>
+
+          <div class="card highlight">
+            <h3>Porozmawiajmy</h3>
+            <p>Chcesz zaprosić nas do współpracy lub zainicjować wspólny projekt?</p>
+            <a href="#contact" class="btn primary full-width">Napisz do nas</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Kontakt</h2>
+          <p>Jeśli chcesz współpracować lub zadać pytanie – odezwij się.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div>
+            <h3>Dane stowarzyszenia</h3>
+            <p>
+              <strong>Stowarzyszenie Centrum Integracji</strong><br />
+              Warszawa
+            </p>
+            <p>
+              e-mail: <a href="mailto:write2sci@gmail.com">write2sci@gmail.com</a>
+            </p>
+            <p class="contact-note">
+              Odpowiadamy zazwyczaj w ciągu 48 godzin.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- STOPKA -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Stowarzyszenie Centrum Integracji.</p>
+      <p class="footer-meta">Tworzymy przestrzeń wiedzy i twórczości, która wspiera integrację społeczności.</p>
+    </div>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>
